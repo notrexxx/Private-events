@@ -1,15 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h2><%= @user.name %></h2>
 
-<%= @user.events.count %>
 
 <%= @user.id %>
 
-    <% @user.events.each do |event| %>
-      <%= event.name %>
-
-         <%= event.description %>
-       <%= author(event) %>
-  <%= event.created_at %>
     <% end %>
 
