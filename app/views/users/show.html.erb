@@ -5,6 +5,11 @@
 
 <%= @user.id %>
 
-    
+    <% @user.events.each do |event| %>
+      <%= event.name %>
+
+         <%= event.description %>
+       <%= author(event) %>
+  <%= event.created_at %>
     <% end %>
 
