@@ -1,9 +1,8 @@
 module UsersHelper
-
   def attended
-    event =  Event.find(params[:id])
+    event = Event.find(params[:id])
     if event.date <= Date.today
-      raw( "<td>#{event.id}</td>
+      raw("<td>#{event.id}</td>
         <td>#{link_to event.name, event}</td>
       <td>#{event.date}</td>
         <td>#{event.description}</td>
@@ -18,5 +17,4 @@ module UsersHelper
   def past_event(user)
     user.attended_events.past_event
   end
-
 end

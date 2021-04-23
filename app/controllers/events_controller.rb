@@ -23,7 +23,6 @@ class EventsController < ApplicationController
     end
   end
 
-
   private
 
   def event_params
@@ -31,6 +30,6 @@ class EventsController < ApplicationController
   end
 
   def logged_in
-    redirect_to  "/login" if !logged_in?
+    redirect_to '/login' unless logged_in?
   end
 end

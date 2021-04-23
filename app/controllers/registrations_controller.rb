@@ -5,9 +5,7 @@ class RegistrationsController < ApplicationController
       redirect_to event_path(event)
     else
       registration = Registration.new(event_id: event.id, user_id: params[:user_id])
-      if registration.save
-        redirect_to event_path(event)
-      end
+      redirect_to event_path(event) if registration.save
     end
   end
 end

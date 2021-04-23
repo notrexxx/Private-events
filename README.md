@@ -12,11 +12,15 @@ This project provides a understanding of the methods used to create associations
 
 # Prerequisites
 
-- Have Ruby installed
+- Ruby 3.0.
+- Rails 6.1.3
+- SQLite3
+- Node.js
+- Yarn
 
 # Getting Started
 
-- Run this command in your OS terminal: `git clone https://github.com/notrexxx/members-only.git` to get a copy of the project. 
+- Run this command in your OS terminal: `git clone https://github.com/notrexxx/Private-events.git` to get a copy of the project. 
 
 # Usage
 To run the application please:
@@ -27,14 +31,23 @@ To run the application please:
 ```
 bundle install
 ```
-press ENTER and wait.
+Press ENTER and wait.
 
+- Type:
+```
+ rails db:create
+```
+and press ENTER
 - Type:
 ```
  rails db:migrate
 ```
 and press ENTER
-
+- Type:
+```
+yarn install
+```
+and press ENTER
 - Type:
 ```
  rails server
@@ -45,24 +58,20 @@ and press ENTER
 
 - Go to http://127.0.0.1:3000/
 
-- Sign In users by using the forms
-- Create posts by clicking on the "new post" link
-- You can see the author of the post only if you are signed in
+- Sign In users by using the sign in form
+- Create posts events by navigating to 'Create event'
+- You can see the events only if you are logged in
+# Prerequisites
 
-# Authors
+- Have Ruby installed
+
+# Author
 
 👤 **Andres Leon**
 
 - GitHub: [@notrexxx](https://github.com/notrexxx)
 - Twitter: [@emigdioleon1](https://twitter.com/emigdioleon1)
 - LinkedIn: [Emigdio Leon](https://linkedin.com/emigdio-leon-689109195)
-
-👤 **Bello Morenikeji Fuad**
-
-- GitHub: [@moreenecoder](https://github.com/Moreneecoder)
-- Twitter: [@mo_bello19](https://twitter.com/mo_bello19)
-- LinkedIn: [Morenikeji Bello](https://linkedin.com/morenikeji-bello)
-
 
 # Show your support
 

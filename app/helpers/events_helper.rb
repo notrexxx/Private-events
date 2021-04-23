@@ -14,8 +14,8 @@ module EventsHelper
 
   def register_btn
     return unless logged_in?
-    button_to 'Register', registrations_path(event_id: @event.id, user_id: current_user.id), method: :post, 
-class: 'btn btn-lg btn-success'
-  end
 
-   end
+    button_to 'Register', registrations_path(event_id: @event.id, user_id: current_user.id), method: :post,
+                                                                                             class: 'btn btn-lg btn-success'
+  end
+end
