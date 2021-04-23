@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+  before_action :logged_in, only: :index
 
   def index
     @events = Event.all
@@ -28,5 +28,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:user_id, :name, :description, :date)
+  end
+
+  def logged_in
+    redirect_to  "/login" if !logged_in?
   end
 end
