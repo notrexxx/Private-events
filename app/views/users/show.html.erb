@@ -1,8 +1,27 @@
 <p id="notice"><%= notice %></p>
-<h2><%= @user.name %></h2>
 
 
-<%= @user.id %>
+<table>
+  <thead>
+  <h2><%= @user.name %>'s events</h2>
+  <tr>
+    <th>Event ID</th>
+    <th>Event</th>
+    <th>Date</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @user.events.each do |event| %>
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= link_to event.name, event %></td>
+      <td><%= event.date %></td>
+      <td><%= event.description %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 
 
