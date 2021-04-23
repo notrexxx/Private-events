@@ -1,9 +1,24 @@
-<h1>Log In</h1>
 
 
-<%= form_with(url: login_path, scope: :session, local: true) do |f| %> 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.submit "Log in" %> 
-  <% end %> 
+<div class="container-fluid">
+  <h2>Log In</h2>
+  <div class="col-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-group">
+          <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, placeholder: "Enter your name" %>
+            </div>
+            <br>
+            <div class="actions">
+              <%= f.submit "Sign Up", class: "btn btn-primary" %>
+            </div>
+
+          <% end %>
+          </div>
+    </div>
+  </div>
+</div>
+
+

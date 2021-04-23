@@ -1,5 +1,16 @@
-<h1>New Event</h1>
 
-<%= render 'form', event: @event %>
+<h2>Create an Event</h2>
 
-<%= link_to 'Back', events_path %>
+<div class="container-fluid">
+  <div class="col-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= render 'form', event: @event %>
+      </div>
+      <div class="panel-footer">
+        <p><%= link_to 'Return to all events', root_path %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
