@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-
-<table>
-  <thead>
-  <h2><%= @user.name %>'s created events</h2>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+  <h3><%= @user.name %>'s created events</h3>
   <tr>
-    <th>Event ID</th>
-    <th>Event</th>
-    <th>Date</th>
-    <th>Description</th>
+    <th scope="col">Event ID</th>
+    <th scope="col">Event Name</th>
+    <th scope="col">Date</th>
+    <th scope="col">Description</th>
+    <th scope="col">Attendees</th>
   </tr>
+
   </thead>
   <tbody>
   <% @user.events.each do |event| %>
@@ -18,52 +19,63 @@
       <td><%= link_to event.name, event %></td>
       <td><%= event.date %></td>
       <td><%= event.description %></td>
+      <td><%= attendees_list(event) %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-<table>
-  <thead>
-  <h3><span style="color: red;">Past Events</span></h3>
+
+
+<table class="table table-hover table-bordered">
+  <thead class="thead-light">
+  <h3><span style="color: Red;">Past Events</span></h3>
   <tr>
-    <th>Event ID</th>
-    <th>Event</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Attendees</th>
+    <th scope="col">Event ID</th>
+    <th scope="col">Event Name</th>
+    <th scope="col">Date</th>
+    <th scope="col">Description</th>
+    <th scope="col">Attendees</th>
   </tr>
+
   </thead>
   <tbody>
-  <% @user.attended_events.sort_by(&:date).each do |event| %>
-
-      <tr>
-        <%= attended %>
-      </tr>
-
+  <% past_event(@user).each do |event| %>
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= link_to event.name, event %></td>
+      <td><%= event.date %></td>
+      <td><%= event.description %></td>
+      <td><%= attendees_list(event) %></td>
+    </tr>
   <% end %>
   </tbody>
 </table>
-<table>
-  <thead>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
   <h3><span style="color: green;">Upcoming Events</span></h3>
   <tr>
-    <th>Event ID</th>
-    <th>Event</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Attendees</th>
+    <th scope="col">Event ID</th>
+    <th scope="col">Event Name</th>
+    <th scope="col">Date</th>
+    <th scope="col">Description</th>
+    <th scope="col">Attendees</th>
   </tr>
+
   </thead>
   <tbody>
-  <% @user.attended_events.sort_by(&:date).each do |event| %>
-
-      <tr>
-        <%= attended_future %>
-      </tr>
-
+  <% future(@user).each do |event| %>
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= link_to event.name, event %></td>
+      <td><%= event.date %></td>
+      <td><%= event.description %></td>
+      <td><%= attendees_list(event) %></td>
+    </tr>
   <% end %>
   </tbody>
 </table>
+
+
 
 
 
