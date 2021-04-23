@@ -1,9 +1,8 @@
 module ApplicationHelper
   def logout_link
-    if logged_in?
-      (link_to 'Logout', logout_path, class: 'btn btn-outline-danger')
+    return unless logged_in?
 
-    end
+    (link_to 'Logout', logout_path, class: 'btn btn-outline-danger')
   end
 
   def nav_link_events
