@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :logged_in, only: :new
+    def new
 
-    def new 
-    
     end
   
     def create
@@ -18,7 +18,9 @@ class SessionsController < ApplicationController
       @current_user = nil
       session[:id] = nil
     end
-  
-    
 
+  private
+  def logged_in
+    redirect_to root_path if logged_in?
+  end
 end
