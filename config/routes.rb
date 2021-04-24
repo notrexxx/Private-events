@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'events#index'
   resources :users
   resources :events, only: %i[show new create index]
-  resources :sessions
+  resources :sessions, only: [:create, :destroy]
   resources :registrations, only: [:create, :destroy, :update]
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
