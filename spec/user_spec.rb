@@ -17,5 +17,22 @@ RSpec.describe User, type: :model do
       user.validate
       expect(user.errors[:name]).to include("can't be blank")
     end
+
+    describe 'Associations' do
+      it 'Has many events' do
+        user = User.reflect_on_association(:events)
+        expect(user.macro).to eq(:has_many)
+      end
+
+      it 'Has many attended events' do
+        user = User.reflect_on_association(:attended_events)
+        expect(user.macro).to eq(:has_many)
+      end
+
+      it 'Has many registrations' do
+        user = User.reflect_on_association(:registrations)
+        expect(user.macro).to eq(:has_many)
+      end
+    end
   end
 end

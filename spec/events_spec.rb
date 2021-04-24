@@ -25,7 +25,7 @@ RSpec.describe 'Events', type: :request do
     end
   end
 
-  describe 'Events attendees' do
+  describe 'Associations' do
     it ': An Event can have many attendees' do
       creator = User.create(name: 'creator')
       attendee1 = User.create(name: 'attendee1')
@@ -37,6 +37,16 @@ RSpec.describe 'Events', type: :request do
 
       saved_event = Event.find(event.id)
       expect(saved_event.attendees.size).to eq(2)
+    end
+
+    it 'Belongs to creator' do
+      event = Event.reflect_on_association(:creator)
+      expect(event.macro).to eq(:belongs_to)
+    end
+
+    it 'Has many registrations' do
+      event = Event.reflect_on_association(:registrations)
+      expect(event.macro).to eq(:has_many)
     end
   end
 end
