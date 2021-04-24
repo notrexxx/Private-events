@@ -6,6 +6,11 @@
 
 This project provides a understanding of the methods used to create associations on rails
 
+# Screenshot
+
+- Main Index View
+![screenshot](Screenshot.png)
+
 # Built With
 
 - Ruby on Rails
