@@ -4,7 +4,7 @@
 <div class="container">
   <h3><span style="color: green;">Upcoming Events</span></h3>
   <div class="row">
-    <% @events.future.each do |event| %>
+    <% @upcoming_events.each do |event| %>
       <div class="col-sm-6">
         <div class="card">
           <div class="card-header">
@@ -29,7 +29,8 @@
 <div class="container">
   <h3><span style="color: darkred;">Past Events</span></h3>
   <div class="row">
-    <% @events.past_event.each do |event| %>
+    <% @past_events.each do |event| %>
+
       <div class="col-sm-6">
         <div class="card">
           <div class="card-header">

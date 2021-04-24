@@ -13,7 +13,7 @@
 
   </thead>
   <tbody>
-  <% @user.events.each do |event| %>
+  <% @created_events.each do |event| %>
     <tr>
       <td><%= event.id %></td>
       <td><%= link_to event.name, event %></td>
@@ -39,7 +39,7 @@
 
   </thead>
   <tbody>
-  <% past_event(@user).each do |event| %>
+  <% @past_events.each do |event| %>
     <tr>
       <td><%= event.id %></td>
       <td><%= link_to event.name, event %></td>
@@ -63,7 +63,7 @@
 
   </thead>
   <tbody>
-  <% future(@user).each do |event| %>
+  <% @upcoming_events.each do |event| %>
     <tr>
       <td><%= event.id %></td>
       <td><%= link_to event.name, event %></td>
