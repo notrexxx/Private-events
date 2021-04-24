@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :logged_in, only: :index
+  before_action :logged_in, only: [:index, :new, :show]
 
   def index
     @events = Event.all
