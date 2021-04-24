@@ -1,0 +1,25 @@
+
+
+<div class="container-fluid">
+  <h2>Log In</h2>
+  <div class="col-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-group">
+          <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, placeholder: "Enter your name" %>
+            </div>
+            <br>
+            <div class="actions">
+              <%= f.submit "Log in", class: "btn btn-primary" %>
+            </div>
+
+          <% end %>
+          <%= link_to 'You dont have an account? Sign Up here', signup_path %>
+          </div>
+    </div>
+  </div>
+</div>
+
+

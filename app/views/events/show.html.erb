@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Author: <%= link_to @creator.name, author_user %></h3>
+
+
+
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Event ID</th>
+    <th scope="col">Event Name</th>
+    <th scope="col">Date</th>
+    <th scope="col">Description</th>
+    <th scope="col">Attendees</th>
+  </tr>
+
+  </thead>
+  <tbody>
+
+
+  <%= form_with(model: @event, local: true) do |f| %>
+
+    <tr>
+      <td><%= @event.id %></td>
+      <td><%= link_to @event.name, @event %></td>
+      <td><%= @event.date %></td>
+      <td><%= @event.description %></td>
+
+
+      <td><%= attendees_list %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= register_btn %>
+<br>
+
+<%= link_to 'Back', events_path %>

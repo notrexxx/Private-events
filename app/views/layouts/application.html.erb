@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>PrivateEvents</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +10,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+ <body>
+ <header class='clearfix'>
+   <%= render 'layouts/navigation' %>
+ </header>
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+  </div>
+    <main role="main">
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+
   </body>
 </html>

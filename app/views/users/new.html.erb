@@ -1,0 +1,27 @@
+
+<div class="container-fluid">
+  <h2>Sign Up</h2>
+  <div class="col-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-group">
+          <%= form_with model: @user, local: true do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, placeholder: "Enter your name" %>
+            </div>
+          <br>
+            <div class="actions">
+              <%= f.submit "Sign Up", class: "btn btn-primary" %>
+            </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

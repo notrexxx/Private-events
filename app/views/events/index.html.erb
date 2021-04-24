@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+  <h3><span style="color: green;">Upcoming Events</span></h3>
+  <div class="row">
+    <% @upcoming_events.each do |event| %>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"><%= link_to event.name, event_path(event) %></h4>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= event.description %></p>
+            <p class="text-secondary">
+              Date:<%= event.date %><br>
+              Created by: &nbsp;<%= event.creator.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <h3><span style="color: darkred;">Past Events</span></h3>
+  <div class="row">
+    <% @past_events.each do |event| %>
+
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"><%= link_to event.name, event_path(event) %></h4>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= event.description %></p>
+            <p class="details text-muted">
+              Date:<%= event.date %><br>
+              Created by:<%= event.creator.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
