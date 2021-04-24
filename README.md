@@ -22,6 +22,7 @@ This project provides a understanding of the methods used to create associations
 - SQLite3
 - Node.js
 - Yarn
+- Rspec
 
 # Getting Started
 
@@ -66,9 +67,16 @@ and press ENTER
 - Sign In users by using the sign in form
 - Create posts events by navigating to 'Create event'
 - You can see the events only if you are logged in
-# Prerequisites
 
-- Have Ruby installed
+# Tests
+
+- Start a new Terminal 
+- Go to the directory where you cloned the repository
+- Type:
+```
+rspec
+```
+and press ENTER
 
 # Author
 
@@ -86,7 +94,7 @@ Give a ⭐️ if you like this project!
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/notrexxx/members-only/issues).
+Feel free to check the [issues page](https://github.com/notrexxx/Private-events/issues).
 
 # Acknowledgments
 
